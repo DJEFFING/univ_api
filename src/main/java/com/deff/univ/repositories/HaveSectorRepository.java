@@ -1,5 +1,11 @@
 package com.deff.univ.repositories;
 
-public interface HaveSectorRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.deff.univ.models.HaveSector;
+
+@Repository
+public interface HaveSectorRepository extends JpaRepository<HaveSector, Integer>{
 
 }

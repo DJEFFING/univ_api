@@ -1,5 +1,9 @@
 package com.deff.univ.repositories;
 
-public interface HaveSpecialtyRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.deff.univ.models.HaveSpecialty;
+
+public interface HaveSpecialtyRepository extends JpaRepository<HaveSpecialty, Integer>{
 
 }

@@ -14,4 +14,13 @@ public class City {
 	@Column(name = "title")
 	private String title;
 
+	
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String newTitle) {
+		this.title=newTitle;
+	}
+
 }
