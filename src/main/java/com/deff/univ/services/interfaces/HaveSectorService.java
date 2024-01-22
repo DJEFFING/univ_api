@@ -10,4 +10,5 @@ public HaveSector save(HaveSector haveSector);
 public List<HaveSector> getHave();
 public HaveSector update(int id,HaveSector haveSector);
 public Optional<HaveSector> findById(int id);
-public String deleteById(int id);}
+public String deleteById(int id);
+}

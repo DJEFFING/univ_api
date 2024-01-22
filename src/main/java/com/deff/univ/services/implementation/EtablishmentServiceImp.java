@@ -42,7 +42,7 @@ public class EtablishmentServiceImp implements EtablishmentService {
     public Optional<Etablishment> findById(int id) {
         return etablishmentRepository.findById(id);
     }
-
+ 
     @Override
     public String deleteById(int id) {
         etablishmentRepository.deleteById(id);
