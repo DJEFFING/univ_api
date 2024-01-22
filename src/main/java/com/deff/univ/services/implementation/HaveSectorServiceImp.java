@@ -37,6 +37,7 @@ public class HaveSectorServiceImp implements HaveSectorService {
 			if(haveSector.getUniversity()!=null) {
 				newhavesector.setUniversity(haveSector.getUniversity());
 			}
+            this.save(haveSector);
 		}
 		return null;
 	}
