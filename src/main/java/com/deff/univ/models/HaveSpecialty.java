@@ -26,4 +26,30 @@ public class HaveSpecialty {
 	@JoinColumn(name="training_center_id")
 	private TrainingCenter trCenter;
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Speciality getSpeciality() {
+		return speciality;
+	}
+
+	public void setSpeciality(Speciality speciality) {
+		this.speciality = speciality;
+	}
+
+	public TrainingCenter getTrCenter() {
+		return trCenter;
+	}
+
+	public void setTrCenter(TrainingCenter trCenter) {
+		this.trCenter = trCenter;
+	}
+
+	
+	
 }

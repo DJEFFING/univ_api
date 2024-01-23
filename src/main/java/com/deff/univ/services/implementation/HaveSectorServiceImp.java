@@ -1,14 +1,19 @@
 package com.deff.univ.services.implementation;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.deff.univ.models.HaveSector;
 import com.deff.univ.repositories.HaveSectorRepository;
 import com.deff.univ.services.interfaces.HaveSectorService;
 
+import jakarta.transaction.Transactional;
+@Service
+@Transactional
 public class HaveSectorServiceImp implements HaveSectorService {
 
 	@Autowired 
@@ -37,7 +42,7 @@ public class HaveSectorServiceImp implements HaveSectorService {
 			if(haveSector.getUniversity()!=null) {
 				newhavesector.setUniversity(haveSector.getUniversity());
 			}
-            this.save(haveSector);
+           return this.save(haveSector);
 		}
 		return null;
 	}

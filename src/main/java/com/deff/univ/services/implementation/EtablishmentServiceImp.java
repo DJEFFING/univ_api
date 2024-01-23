@@ -3,11 +3,16 @@ package com.deff.univ.services.implementation;
 import com.deff.univ.models.Etablishment;
 import com.deff.univ.repositories.EtablishmentRepository;
 import com.deff.univ.services.interfaces.EtablishmentService;
+
+import jakarta.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
+@Transactional
 public class EtablishmentServiceImp implements EtablishmentService {
 
     @Autowired
