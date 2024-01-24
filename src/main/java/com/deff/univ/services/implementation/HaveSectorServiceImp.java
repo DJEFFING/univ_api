@@ -3,12 +3,16 @@ package com.deff.univ.services.implementation;
 import java.util.List;
 import java.util.Optional;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.deff.univ.models.HaveSector;
 import com.deff.univ.repositories.HaveSectorRepository;
 import com.deff.univ.services.interfaces.HaveSectorService;
+import org.springframework.stereotype.Service;
 
+@Service
+@Transactional
 public class HaveSectorServiceImp implements HaveSectorService {
 
 	@Autowired 
