@@ -32,4 +32,45 @@ public class UniversityTestimony {
 	@ManyToOne
 	@JoinColumn(name = "university_id")
 	private University university;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public University getUniversity() {
+		return university;
+	}
+
+	public void setUniversity(University university) {
+		this.university = university;
+	}
+	
 }

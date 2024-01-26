@@ -13,38 +13,4 @@ import com.gl.univ.services.interfaces.UserService;
 import jakarta.transaction.Transactional;
 @Service
 @Transactional
-public class UserServiceImp implements UserService{
-
-	@Override
-	public User save(User use) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<com.gl.univ.models.User> findAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.gl.univ.models.User update(int id, com.gl.univ.models.User use) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Optional<com.gl.univ.models.User> findById(int id) {
-		// TODO Auto-generated method stub
-		return Optional.empty();
-	}
-
-	@Override
-	public String deleteById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	
-}
+public class UserServiceImp {}

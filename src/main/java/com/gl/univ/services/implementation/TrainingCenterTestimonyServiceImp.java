@@ -3,6 +3,7 @@ package com.gl.univ.services.implementation;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gl.univ.models.TrainingCenterTestimony;
@@ -13,7 +14,7 @@ import jakarta.transaction.Transactional;
 @Service
 @Transactional
 public class TrainingCenterTestimonyServiceImp implements TrainingCenterTestimonyService{
-
+	@Autowired
 	private TrainingCenterTestimonyRepository trainingCenterTestimonyRepository;
 	@Override
 	public TrainingCenterTestimony save(TrainingCenterTestimony trainingCenterTestimony) {
@@ -56,6 +57,7 @@ public class TrainingCenterTestimonyServiceImp implements TrainingCenterTestimon
 			if(trainingCenterTestimony.getUser()!=null) {
 				newtrainingcentertestimony.setUser(trainingCenterTestimony.getUser());
 			}
+			this.save(newtrainingcentertestimony);
 			
 		}
 		return null;
