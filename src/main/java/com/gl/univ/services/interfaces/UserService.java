@@ -9,8 +9,6 @@ import com.gl.univ.models.User;
 
 
 
-
-
 public interface UserService {
 	  public User save(User use);
 	    public List<User> findAll();
