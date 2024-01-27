@@ -10,29 +10,30 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
+@CrossOrigin("http://localhost:4200")
 @RequestMapping("categories/")
 public class CategoryController {
     @Autowired
     CategoryService categoryService;
 
-    @PostMapping("/")
-    public Category save(@RequestBody  Category category){
+    @PostMapping
+    public @ResponseBody Category save(@RequestBody  Category category){
         return  categoryService.save(category);
     }
     @PutMapping("update-{id}")
-    public Category update(@RequestBody Category newCategory,@PathVariable("id") int idCategory){
+    public @ResponseBody Category update(@RequestBody Category newCategory,@PathVariable("id") int idCategory){
         return  categoryService.update(newCategory,idCategory);
     }
-    @GetMapping("/")
-    public List<Category> findAll(){
+    @GetMapping
+    public @ResponseBody List<Category> findAll(){
         return categoryService.findAll();
     };
     @GetMapping("find-{id}")
-    public Optional<Category> findById(@PathVariable("id") int idCategory){
+    public @ResponseBody Optional<Category> findById(@PathVariable("id") int idCategory){
         return categoryService.findById(idCategory);
     };
     @DeleteMapping("delete-{id}")
-    public String deleteById( @PathVariable("id") int idCategory){
+    public @ResponseBody String deleteById( @PathVariable("id") int idCategory){
         return categoryService.deleteById(idCategory);
     };
 
