@@ -1,10 +1,14 @@
 package com.gl.univ.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name="city")
 public class City {
 	@Id
@@ -14,7 +18,7 @@ public class City {
 	@Column(name = "title")
 	private String title;
 
-	
+
 	public String getTitle() {
 		return this.title;
 	}

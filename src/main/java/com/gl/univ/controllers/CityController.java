@@ -10,17 +10,18 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
+@CrossOrigin("http://localhost:4200")
 @RequestMapping("cities/")
 public class CityController {
 
     @Autowired
     CityService cityService;
     @PostMapping("/")
-    public City save(@RequestBody City city){
+    public @ResponseBody  City  save(@RequestBody City city){
         return  cityService.save(city);
     }
     @GetMapping("/")
-    public List<City> findAll(){
+    public @ResponseBody  List<City> findAll(){
         return cityService.findAll();
     };
     @PutMapping("/update-{id}")
@@ -28,11 +29,11 @@ public class CityController {
         return cityService.update(idCity,newCity);
     }
     @GetMapping("/find-{id}")
-    public Optional<City> findById(@PathVariable("id") int idCity){
+    public @ResponseBody  Optional<City> findById(@PathVariable("id") int idCity){
         return cityService.findById(idCity);
     }
     @DeleteMapping("/delete-{id}")
-    public String deleteById(int idCity){
+    public @ResponseBody  String deleteById(int idCity){
         return cityService.deleteById(idCity);
     }
 
