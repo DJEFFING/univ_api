@@ -1,10 +1,14 @@
 package com.gl.univ.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name="user")
 public class User {
 	@Id
@@ -73,6 +77,20 @@ public class User {
 	public void setProfilImage(String profilImage) {
 		this.profilImage = profilImage;
 	}
+
+	public User(Integer id, String fistName, String lastName, String email, String password, String profilImage) {
+		super();
+		this.id = id;
+		this.fistName = fistName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.profilImage = profilImage;
+	}
+	public User() {
+	
+	}
+	
 	
 	
 

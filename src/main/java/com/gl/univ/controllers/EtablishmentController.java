@@ -10,31 +10,32 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
+@CrossOrigin("http://localhost:4200")
 @RequestMapping("establishment/")
 public class EtablishmentController {
     @Autowired
     EtablishmentService etablishmentService;
 
     @PostMapping("/")
-    public Etablishment save(@RequestBody  Etablishment etablishment){
+    public @ResponseBody Etablishment save(@RequestBody  Etablishment etablishment){
         return etablishmentService.save(etablishment);
     }
     @GetMapping("/")
-    public List<Etablishment> findAll(){
+    public @ResponseBody List<Etablishment> findAll(){
         return etablishmentService.findAll();
     }
     @PutMapping("/update-{id}")
-    public Etablishment update(@PathVariable("id") int id, @RequestBody Etablishment etablishment){
+    public @ResponseBody Etablishment update(@PathVariable("id") int id, @RequestBody Etablishment etablishment){
         return etablishmentService.update(id,etablishment);
     }
 
     @GetMapping("/find-{id}")
-    public Optional<Etablishment> findById(@PathVariable("id") int id){
+    public @ResponseBody Optional<Etablishment> findById(@PathVariable("id") int id){
         return etablishmentService.findById(id);
       }
 
       @DeleteMapping("/delete-{id}")
-    public  String deleteById(@PathVariable("id") int id){
+    public  @ResponseBody String deleteById(@PathVariable("id") int id){
         return etablishmentService.deleteById(id);
       }
 

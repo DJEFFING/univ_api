@@ -35,4 +35,13 @@ public class Category {
 		this.title = title;
 	}
 
+	public Category(Integer id, String title) {
+		super();
+		this.id = id;
+		this.title = title;
+	}
+	public Category() {
+		
+	}
+
 }

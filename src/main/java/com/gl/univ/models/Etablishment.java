@@ -6,10 +6,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name="establishment")
 public class Etablishment {
 	@Id
@@ -33,6 +37,15 @@ public class Etablishment {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public Etablishment(Integer id, String title) {
+		super();
+		this.id = id;
+		this.title = title;
+	}
+	public Etablishment() {
+		
 	}
 
 }

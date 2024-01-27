@@ -129,6 +129,25 @@ public class TrainingCenter {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public TrainingCenter(Integer id, String name, String logo, String description, String mangerNumber, String webSite,
+			Etablishment etablishment, Category category, City city, User user) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.logo = logo;
+		this.description = description;
+		this.mangerNumber = mangerNumber;
+		this.webSite = webSite;
+		this.etablishment = etablishment;
+		this.category = category;
+		this.city = city;
+		this.user = user;
+	}
+
+	public TrainingCenter() {
+		
+	}
 	
 	
 

@@ -49,4 +49,12 @@ public class HaveSector {
 		this.university = university;
 	}
 
+	public HaveSector(Integer id, Sector sector, University university) {
+		super();
+		this.id = id;
+		this.sector = sector;
+		this.university = university;
+	}
+	
+
 }

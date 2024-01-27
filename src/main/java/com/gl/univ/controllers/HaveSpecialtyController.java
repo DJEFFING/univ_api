@@ -18,7 +18,7 @@ public class HaveSpecialtyController {
 	
 	//creation haveSpecialty
 	@PostMapping("/")
-	private HaveSpecialty create(@RequestBody HaveSpecialty haveSpecialty) {
+	private @ResponseBody HaveSpecialty create(@RequestBody HaveSpecialty haveSpecialty) {
 		
 		return haveSpecialtyService.save(haveSpecialty);
 		
@@ -26,25 +26,25 @@ public class HaveSpecialtyController {
 	
 	//listing  haveSpecialty
 	@GetMapping("/")
-	private List<HaveSpecialty> getAll(){
+	private @ResponseBody List<HaveSpecialty> getAll(){
 		return haveSpecialtyService.getHave(); 	
 	}
 	
 	//suppression d'une haveSpecialty
 	@DeleteMapping("/delete-{id}")
-	private String delete(@PathVariable("id") int id){
+	private @ResponseBody String delete(@PathVariable("id") int id){
 		return  haveSpecialtyService.deleteById(id);
 	}
 	
 	//listing haveSpecialty par id
 	@GetMapping("/find-{id}")
-	private Optional<HaveSpecialty> getHaveSpecialtyById(@PathVariable("id") int id) {
+	private @ResponseBody Optional<HaveSpecialty> getHaveSpecialtyById(@PathVariable("id") int id) {
 		return haveSpecialtyService.findById(id);
 	}
 	
 	//update haveSpecialty
 	@PutMapping("/update-{id}")
-	private HaveSpecialty update(@PathVariable("id") int id, @RequestBody HaveSpecialty haveSpecialty) {
+	private @ResponseBody HaveSpecialty update(@PathVariable("id") int id, @RequestBody HaveSpecialty haveSpecialty) {
 		return haveSpecialtyService.update(id, haveSpecialty);
 	}
 }

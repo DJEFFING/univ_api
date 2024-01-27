@@ -1,68 +1,69 @@
 package com.gl.univ.services.implementation;
 
+import com.gl.univ.models.User;
+import com.gl.univ.repositories.UserRepository;
+import com.gl.univ.services.interfaces.UserService;
+import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
-import org.springframework.stereotype.Service;
-
-import com.gl.univ.repositories.UserRepository;
-import com.gl.univ.services.interfaces.UserService;
-
-import jakarta.transaction.Transactional;
 @Service
 @Transactional
-public class UserServiceImp implements UserService{
-	@Autowired
-	private UserRepository userRepository;
+public class UserServiceImp implements UserService {
 
-	@Override
-	public com.gl.univ.models.User save(com.gl.univ.models.User use) {
-		
-		return userRepository.save(use);
-	}
+    @Autowired
+    UserRepository userRepository;
+    @Override
+    public User save(User user) {
+        return userRepository.save(user);
+    }
 
-	@Override
-	public List<com.gl.univ.models.User> findAll() {
-	
-		return userRepository.findAll();
-	}
+    @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
 
-	@Override
-	public com.gl.univ.models.User update(int id, com.gl.univ.models.User use) {
-		 Optional<com.gl.univ.models.User> optionaluser = findById(id);
-		 if(optionaluser.isPresent()) {
-			 com.gl.univ.models.User newuser = optionaluser.get();
-			 if(use.getEmail()!=null) {
-				 newuser.setEmail(use.getEmail());
-			 }
-			 if(use.getFistName()!=null) {
-				 newuser.setFistName(use.getFistName());
-			 }
-			 if(use.getLastName()!=null) {
-				 newuser.setLastName(use.getLastName());
-			 }
-			 if(use.getPassword()!=null) {
-				 newuser.setPassword(use.getPassword());
-			 }
-			 if(use.getProfilImage()!=null) {
-				 newuser.setLastName(use.getLastName());
-			 }
-			 this.save(newuser);
-		 }
-	
-		return null;
-	}
+    @Override
+    public User update(int id, User user) {
+        Optional<User> userOptional= findById(id);
 
-	@Override
-	public Optional<com.gl.univ.models.User> findById(int id) {
+        if(userOptional.isPresent()){
+         User newUser = userOptional.get();
 
-		return userRepository.findById(id);
-	}
+         if(user.getEmail()!=null){
+             newUser.setEmail(user.getEmail());
+         }
 
-	@Override
-	public String deleteById(int id) {
-		userRepository.deleteById(id);
-		return "User has deleted";
-	}}
+         if(user.getFistName()!=null){
+             newUser.setFistName(user.getFistName());
+         }
+
+         if (user.getLastName()!=null){
+             newUser.setLastName(user.getLastName());
+         }
+
+         if(user.getPassword()!=null){
+             newUser.setPassword(user.getPassword());
+         }
+         if(user.getProfilImage()!=null){
+             newUser.setProfilImage(user.getProfilImage());
+         }
+         save(newUser);
+        }
+        return null;
+    }
+
+    @Override
+    public Optional<User> findById(int id) {
+        return userRepository.findById(id);
+    }
+
+    @Override
+    public String delete(int id) {
+        userRepository.deleteById(id);
+        return "this user has delete successful";
+    }
+}
